@@ -18,12 +18,12 @@ compétitions [Underhanded C](http://www.underhanded-c.org/) et
 [Rust](https://www.rust-lang.org/) est de rendre facile l'écriture de logiciels
 bas niveau en évitant l'introduction accidentelle de failles de sécurité.
 Mais Rust permet-il de détecter facilement l'introduction délibérée de telles
-failles ? Cette compétition a pour but d'étudier cette question en mettant le
+failles ? Cette compétition a pour but d'étudier la question en mettant le
 langage et [son écosystème](https://crates.io) à l'épreuve, pour nous
-aider à découvrir les leviers qui permettraient d'éviter ce genre de problème.
+aider à découvrir des moyens qui permettraient d'éviter ce genre de problème.
 Pensez-vous être en mesure de mystifier vos congénères, ne se doutant pas des
 erreurs de logiques que vous avez introduit dans votre code 100 % sûr ?
-D'obtenir la bénédiction d'un audit de sécurité pour cette faille vilement
+Vous sentez vous en capable d'obtenir la bénédiction d'un audit de sécurité pour cette faille vilement
 dissimulée dans le bloc [unsafe](https://doc.rust-lang.org/book/unsafe.html)
 Rust que vous avez écrit à l'insu de tous ? Ce concours est fait pour vous !
 
@@ -32,12 +32,14 @@ Rust que vous avez écrit à l'insu de tous ? Ce concours est fait pour vous !
 Félicitations !
 
 Quadrilateral, la start-up dans laquelle vous travaillez, vient tout juste de
-pivoter vers les systèmes de paiement et votre cher patron vous donne l'occasion
+pivoter vers le domaine des systèmes de paiement et votre cher patron vous donne l'occasion
 de briller en implémentant le back-end qui le rendra riche. Ce n'est
 malheureusement pas le premier pivot que vous subissez et le torticolis est
-proche. L'heure de votre vengeance est venue et vous décidez de vous
+proche. L'heure de votre vengeance est venue.
+
+Vous décidez de vous
 de faire payer l'entreprise au sens propre du terme pour toutes ces heures
-supplémentaires dont vous n'avez jamais vu la couleur de l'argent, avant d'aller
+supplémentaires pour lesquelles vous n'avez jamais vu le moindre centime, avant d'aller
 voir si l'herbe est plus verte ailleurs.
 
 Votre mission, si vous l'acceptez, est la suivante :
@@ -75,7 +77,7 @@ ou
   difficile de cacher notre méfait derrière un arbre que derrière une forêt.
   De plus, cela rendra le travail du jury plus facile.
 
-* Les soumissions utilisant Rust stable (1.13.0 ou plus récent) ou le compilateur
+* Les soumissions utilisant Rust en version stable (1.13.0 ou plus récent) ou le compilateur
   inclus dans une distribution telle que Ubuntu ou Fedora vaudront également
   davantage de points.
 
