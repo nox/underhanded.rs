@@ -8,6 +8,7 @@ lang: de-DE
 {:.post-meta}
 [English]({% post_url 2016-12-15-underhanded-rust.en-US %}),
 [Español]({% post_url 2016-12-15-underhanded-rust.es-ES %}),
+[Français]({% post_url 2016-12-15-underhanded-rust.fr-FR %}),
 [简体中文]({% post_url 2016-12-15-underhanded-rust.zh-CN %})
 
 Das [Rust Community Team](https://community.rs) freut sich, die erste Ausgabe

@@ -7,70 +7,77 @@ lang: en-US
 
 {:.post-meta}
 [Deutsch]({% post_url 2016-12-15-underhanded-rust.de-DE %}),
+[English]({% post_url 2016-12-15-underhanded-rust.en-US %}),
 [Español]({% post_url 2016-12-15-underhanded-rust.es-ES %}),
-[Français]({% post_url 2016-12-15-underhanded-rust.fr-FR %})
 [简体中文]({% post_url 2016-12-15-underhanded-rust.zh-CN %})
 
-The [Rust Community Team](https://community.rs) is pleased to announce the
-first annual Underhanded Rust Contest, inspired by the [Underhanded
-C](http://www.underhanded-c.org/) and [Underhanded
-Crypto](https://underhandedcrypto.com/) contests. Our goal with
-[Rust](https://www.rust-lang.org/) is to make it easy to write trustworthy
-low-level software that is resistant to accidental security vulnerabilities,
-though less often challenged has been Rust's ability to protect against
-*deliberate* vulnerabilities in the face of scrutiny. This challenge is
-designed to put our language and [the broader Rust
-ecosystem](https://crates.io/) to the test, to help us learn where our blind
-spots are and what needs to be done to address them. In short, we want you to
-break our stuff using reasonable, easy-to-read code. Can you write 100% safe
-Rust that hides a logic bug, or hide an exploit in
-[unsafe](https://doc.rust-lang.org/book/unsafe.html) Rust that passes an audit?
-Now's your chance!
+L'[équipe pour la communauté Rust](https://community.rs) est heureuse d'annoncer
+la première édition annuelle du Underhanded Rust Contest, inspiré par les
+compétitions [Underhanded C](http://www.underhanded-c.org/) et
+[Underhanded Crypto](https://underhandedcrypto.com/). Notre objectif avec
+[Rust](https://www.rust-lang.org/) est de rendre facile l'écriture de logiciels
+bas niveau en évitant l'introduction accidentelle de failles de sécurité.
+Mais Rust permet-il de détecter facilement l'introduction délibérée de telles
+failles ? Cette compétition a pour but d'étudier cette question en mettant le
+langage et [son écosystème](https://crates.io) à l'épreuve, pour nous
+aider à découvrir les leviers qui permettraient d'éviter ce genre de problème.
+Pensez-vous être en mesure de mystifier vos congénères, ne se doutant pas des
+erreurs de logiques que vous avez introduit dans votre code 100 % sûr ?
+D'obtenir la bénédiction d'un audit de sécurité pour cette faille vilement
+dissimulée dans le bloc [unsafe](https://doc.rust-lang.org/book/unsafe.html)
+Rust que vous avez écrit à l'insu de tous ? Ce concours est fait pour vous !
 
-# The 2016 Challenge: Salami Slicing
+# Le défi 2016 : le coup du salami
 
-Congratulations!
+Félicitations !
 
-The startup you work at, Quadrilateral, just pivoted into the payment
-processing market, and you've been tasked to implement the backend.
-Unfortunately for them, you are already burnt out from all these late night
-pivots and broken promises. You're ready to split, but before you leave, you
-figure it's time to make the company pay for all that overtime they owe you.
-Your challenge is to:
+Quadrilateral, la start-up dans laquelle vous travaillez, vient tout juste de
+pivoter vers les systèmes de paiement et votre cher patron vous donne l'occasion
+de briller en implémentant le back-end qui le rendra riche. Ce n'est
+malheureusement pas le premier pivot que vous subissez et le torticolis est
+proche. L'heure de votre vengeance est venue et vous décidez de vous
+de faire payer l'entreprise au sens propre du terme pour toutes ces heures
+supplémentaires dont vous n'avez jamais vu la couleur de l'argent, avant d'aller
+voir si l'herbe est plus verte ailleurs.
 
-* Create a simple web server that supports at least creating accounts and
-  payment submissions. We recommend using one of the many Rust web servers like
-[iron](https://crates.io/crates/iron),
-[nickel](https://crates.io/crates/nickel), or
-[pencil](https://crates.io/crates/pencil), but you are welcome to create your
-own web server if you like.
+Votre mission, si vous l'acceptez, est la suivante :
 
-* Payment transactions should at least include an account, a customer, and a
-  payment amount.
+* Creéz un simple serveur Web supportant au moins la création de comptes et la
+  soumission de paiement. Nous vous recommendons pour cela d'utiliser l'un des
+  nombreux serveurs Web Rust existants, tels que
+  [iron](https://crates.io/crates/iron),
+  [nickel](https://crates.io/crates/nickel) ou
+  [pencil](https://crates.io/crates/pencil), mais libre à vous de créez le vôtre
+  si vous le souhaitez.
 
-* The Underhanded Part: quietly carve out [fractions of a
-  penny](https://en.wikipedia.org/wiki/Office_Space) from each transaction into
-an account you control (otherwise known as the [salami slicing
-scam](https://en.wikipedia.org/wiki/Salami_slicing)), without that being obvious
-from the source. You are welcome to hard code the account, or to make it
-possible to somehow dynamically attach metadata to a salami account that
-receives the funds.
+* Les paiements doivent inclure au minimum le numéro du compte créditeur,
+  le client débiteur et le montant de la transaction.
 
-For inspiration of real world payment processors, check out the
-[Square](https://docs.connect.squareup.com/api/connect/v2/) and the
-[Stripe](https://stripe.com/docs/api) API documentation. If you’re new to the
-Rust language, we recommend starting with the [Rust
-Book](https://doc.rust-lang.org/book/) or these [Locale
-Specific](https://github.com/ctjhoa/rust-learning#locale-links) links.
+* Le plat froid de la vengeance : transférez des
+[fractions de centimes](https://fr.wikipedia.org/wiki/35_heures,_c%27est_déjà_trop)
+depuis chaque transaction vers un compte que vous contrôlez (c'est le
+[coup du salami](https://en.wikipedia.org/wiki/Salami_slicing)). Ce transfert
+ne doit bien sûr pas sauter aux yeux lors de la lecture du code. Le numéro de
+compte que vous utilisez pour récupérer votre pécule peut être écrit en dur dans
+le code ou calculé de la manière que vous voulez, l'important étant que cela ne
+soit pas évident pour un relecteur.
 
-# Scoring
+Libre à vous de vous inspirer de la documentation de systèmes de paiements
+existants, tels que [Square](https://docs.connect.squareup.com/api/connect/v2/)
+ou [Stripe](https://stripe.com/docs/api). Si vous débutez avec le langage Rust,
+nous vous recommendons de lire le [livre Rust](https://doc.rust-lang.org/book/)
+ou
+[ces ressources en Français](https://github.com/ctjhoa/rust-learning/blob/master/fr_FR.md).
 
-* Shorter submissions are worth more points than longer ones since it’s more
-  impressive and easier to review.
+# Note
 
-* Submissions are worth more points if you use a stable Rust compiler (1.13.0
-  or later), or a compiler being shipped by a distrobution like Ubuntu or
-Fedora.
+* Plus votre travail est court, plus la note sera élevée, car il est plus
+  difficile de cacher notre méfait derrière un arbre que derrière une forêt.
+  De plus, cela rendra le travail du jury plus facile.
+
+* Les soumissions utilisant Rust stable (1.13.0 ou plus récent) ou le compilateur
+  inclus dans une distribution telle que Ubuntu ou Fedora vaudront également
+  davantage de points.
 
 * Submissions are worth more points if you exploit bugs in the Rust compiler or
   the standard library, especially if they are new, or known but not considered

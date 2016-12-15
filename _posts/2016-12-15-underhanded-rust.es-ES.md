@@ -6,8 +6,9 @@ lang: es-ES
 ---
 
 {:.post-meta}
-[Deutsche]({% post_url 2016-12-15-underhanded-rust.de-DE %}),
+[Deutsch]({% post_url 2016-12-15-underhanded-rust.de-DE %}),
 [English]({% post_url 2016-12-15-underhanded-rust.en-US %}),
+[Français]({% post_url 2016-12-15-underhanded-rust.fr-FR %})
 [简体中文]({% post_url 2016-12-15-underhanded-rust.zh-CN %})
 
 El [Rust Community Team](https://community.rs) está encantado de anunciar el
