@@ -4,7 +4,7 @@ title: À Propos
 lang: fr-FR
 ---
 
-Le Underhanded Rust Contest est une compétition officielle du
+Le Underhanded Rust Contest est une compétition officielle en
 [langage Rust](https://rust-lang.org) pour découvrir et documenter les
 meilleures façons de subtilement subvertir du code Rust. Il s’agit d’une
 compétition annuelle dont le thème varie chaque année.
